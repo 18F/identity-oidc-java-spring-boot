@@ -6,6 +6,28 @@
     </head>
     <body>
         <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        
+        <div>
+	        <ul>
+	        	<!-- The subject and issuer taken together will uniquely identify your user, this lets you see them separately -->
+	        	<li>Subject: <span sec:authentication="sub">XXX1234</span></li>
+	        	<li>Issuer: <span sec:authentication="issuer">foo.com</span></li>
+	        	
+	        	<!-- The user's email address, if provided; this is not to be used as a unique identifier as it's not guaranteed -->
+	        	<li>Email: <span sec:authentication="userInfo.email">bar@foo.com</span></li>
+	        	<li>Email verified: <span sec:authentication="userInfo.emailVerified">true</span></li>
+	        	
+	        	<!-- The user's preferred username; if your app has a space for a user-friendly "username", try to use this, do not use it to uniquely identify the user -->
+	        	<li>Preferred username: <span sec:authentication="userInfo.preferredUsername">bar</span></li>
+	        	
+	        	<!-- Timestamp of when the user's account was updated -->
+	        	<li>Last updated: <span sec:authentication="userInfo.updatedTime">1234</span></li>
+	        	
+	        	<!-- The list of security roles the user has -->
+				<li>Roles: <span sec:authentication="authorities">[ROLE_USER, ROLE_ADMIN]</span></li>
+	        </ul>
+        </div>
+        
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>
