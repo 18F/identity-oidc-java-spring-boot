@@ -103,6 +103,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 			// This sets up the logout system
 			.logout()
+				.logoutSuccessUrl("/")
 				.permitAll();
 	}
 
