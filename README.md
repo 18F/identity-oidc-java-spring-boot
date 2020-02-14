@@ -1,3 +1,10 @@
+This sample SP has been retired. It was used for early prototyping for integrations with login.gov and has not been maintained. It has confirmed vulnerabilities and should not be used for production itegrations.
+
+For maintained examples of integrations with login.gov please refer to:
+
+- https://github.com/18F/identity-saml-sinatra
+- https://github.com/18F/identity-oidc-sinatra
+
 # OpenID Connect Client for Spring Boot
 
 This example application demonstrates how to configure an OpenID Connect client for Spring Boot to connect to the [login.gov](https://login.gov/) identity service. 
